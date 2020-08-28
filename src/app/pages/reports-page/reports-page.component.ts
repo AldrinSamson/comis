@@ -77,6 +77,18 @@ export class ReportsPageComponent implements OnInit {
         this.readIncident()
       });
     }
+
+    openPdfTransaction(){
+      const dialogConfig = new MatDialogConfig();
+      this.dialog.open(pdfTransactionDialog , dialogConfig).afterClosed().subscribe(result => {
+      });
+    }
+
+    openPdfAudit(){
+      const dialogConfig = new MatDialogConfig();
+      this.dialog.open(pdfAuditDialog , dialogConfig).afterClosed().subscribe(result => {
+      });
+    }
   
   }
   
@@ -126,6 +138,59 @@ export class ReportsPageComponent implements OnInit {
       }
       
     }
+  
+    onNoClick(): void {
+      this.dialogRef.close();
+      }  
+  }
+
+  @Component({
+    selector : 'pdf-transaction-dialog',
+    templateUrl : './dialog/pdf-transaction-dialog.html',
+    styleUrls: ['./reports-page.component.scss'],
+  })
+  
+  export class pdfTransactionDialog implements OnInit {
+  
+  
+    constructor(
+      public DS: DataService,
+      public dialogRef: MatDialogRef<pdfTransactionDialog>,
+      public fb: FormBuilder,
+      @Inject(MAT_DIALOG_DATA) public data: any
+      ) {
+
+      }
+  
+    ngOnInit() {
+     
+    } 
+    
+  
+    onNoClick(): void {
+      this.dialogRef.close();
+      }  
+  }
+
+  @Component({
+    selector : 'pdf-audit-dialog',
+    templateUrl : './dialog/pdf-audit-dialog.html',
+    styleUrls: ['./reports-page.component.scss'],
+  })
+  
+  export class pdfAuditDialog implements OnInit {
+  
+    constructor(
+      public DS: DataService,
+      public dialogRef: MatDialogRef<pdfAuditDialog>,
+      public fb: FormBuilder,
+      @Inject(MAT_DIALOG_DATA) public data: any
+      ) {
+
+      }
+  
+    ngOnInit() {
+    } 
   
     onNoClick(): void {
       this.dialogRef.close();

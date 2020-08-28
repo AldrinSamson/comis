@@ -3,7 +3,7 @@
        <mat-tab label = "Transactions">
         <div class = "card">
           <div class = "card-header">
-              <button mat-button [swal]="['Oops!', 'This is not implemented yet :/', 'warning']" >Save as PDF</button> <br>
+              <button mat-button (click)="openPdfTransaction()" >Save as PDF</button> <br>
               <button mat-button [swal]="['Oops!', 'This is not implemented yet :/', 'warning']" >Save as CSV</button> 
           </div>
           <div class = "card-body">
@@ -85,7 +85,7 @@
       <mat-tab label = "Logs">
         <div class = "card">
             <div class = "card-header">
-                <button mat-button [swal]="['Oops!', 'This is not implemented yet :/', 'warning']" >Save as PDF</button> <br>
+                <button mat-button (click)="openPdfAudit()" >Save as PDF</button> <br>
                 <button mat-button [swal]="['Oops!', 'This is not implemented yet :/', 'warning']" >Save as CSV</button> 
             </div>
             <div class = "card-body">
