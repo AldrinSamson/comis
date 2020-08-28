@@ -52,6 +52,9 @@ app.get('/admin/dashboard/account', function(req, res, next) {
 app.get('/admin/inventory', function(req, res, next) {
   res.sendFile('index.html', { root: __dirname + '../../dist' });
 });
+app.get('/admin/inventory/inventoryConfig', function(req, res, next) {
+  res.sendFile('index.html', { root: __dirname + '../../dist' });
+});
 app.get('/admin/borrow-return', function(req, res, next) {
   res.sendFile('index.html', { root: __dirname + '../../dist' });
 });
